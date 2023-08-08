@@ -10,7 +10,10 @@ function App() {
     <>
       <Grid
         templateRows="repeat(2, 1fr)"
-        templateColumns="repeat(4, 1fr)"
+        templateColumns={{
+          base: "1fr",
+          md: "repeat(4, 1fr)",
+        }}
         gap={4}
         margin="25vh 16.5vw"
       >
