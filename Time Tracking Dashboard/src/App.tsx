@@ -1,7 +1,11 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import "./index.css";
+import data from "./data.json";
+import CardContainer from "./Components/CardContainer";
 
 function App() {
+  const cardColor = data.cards.map((c) => c.backgroundColor);
+  console.log(cardColor);
   return (
     <>
       <Grid
@@ -11,9 +15,10 @@ function App() {
         margin="25vh 16.5vw"
       >
         <GridItem>
-          <Box w="100%" h="245px">
-            Block 1
-          </Box>
+          <CardContainer
+            CardBgGradient="linear-gradient(180deg, rgb(255, 138, 100, 1) 26%, rgba(18,23,37,0) 78%)"
+            CardImg="./src/assets/icon-social.svg"
+          />
         </GridItem>
         <GridItem>
           <Box w="100%" h="245px">
