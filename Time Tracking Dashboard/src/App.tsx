@@ -1,4 +1,5 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
+import "./index.css";
 
 function App() {
   return (
