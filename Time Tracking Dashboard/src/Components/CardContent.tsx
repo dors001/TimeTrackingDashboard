@@ -30,7 +30,7 @@ const CardContent = ({ CardTitle, CardTimeFrames }: Props) => {
             <Text
               width="100%"
               fontSize="1.8rem"
-              fontWeight="normal"
+              fontWeight="bold"
               display="inline-box"
             >
               {CardTitle}
@@ -43,10 +43,10 @@ const CardContent = ({ CardTitle, CardTimeFrames }: Props) => {
             />
           </Flex>
           <Flex width="100%" justifyContent="space-between">
-            <Text fontSize="3.2rem" fontWeight="bold" display="inline">
+            <Text className="lightFont" fontSize="3.2rem" display="inline">
               {CardTimeFrames.current}hrs
             </Text>
-            <Text fontSize="1.3rem" fontWeight="light" paddingTop="1.5rem">
+            <Text className="lightFont" fontSize="1.3rem" paddingTop="1.5rem">
               Last Week - {CardTimeFrames.previous}hrs
             </Text>
           </Flex>
@@ -57,7 +57,7 @@ const CardContent = ({ CardTitle, CardTimeFrames }: Props) => {
           <Text
             width="100%"
             fontSize="1.8rem"
-            fontWeight="normal"
+            fontWeight="bold"
             display="inline-box"
           >
             {CardTitle}
@@ -70,16 +70,16 @@ const CardContent = ({ CardTitle, CardTimeFrames }: Props) => {
           />
         </Flex>
         <Text
+          className="lightFont"
           fontSize="5.6rem"
-          fontWeight="bold"
           marginLeft="2rem"
           marginTop="1rem"
         >
           {CardTimeFrames.current}hrs
         </Text>
         <Text
+          className="lightFont"
           fontSize="1.4rem"
-          fontWeight="light"
           marginLeft="2rem"
           paddingBottom="1rem"
         >

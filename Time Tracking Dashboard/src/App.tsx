@@ -1,9 +1,12 @@
 import { Button, Flex, Grid } from "@chakra-ui/react";
 import "./index.css";
 import useCards from "./Hooks/useTimeframes";
+import { useState } from "react";
+import Buttons from "./Components/Buttons";
 
 function App() {
-  const cards = useCards("");
+  const [timeframe, setTimeframe] = useState("weekly");
+  const cards = useCards(timeframe);
 
   return (
     <>
@@ -16,11 +19,7 @@ function App() {
         gap={4}
         margin="2rem"
       >
-        <Flex direction="column" gap={2}>
-          <Button>daily</Button>
-          <Button>weekly</Button>
-          <Button>monthly</Button>
-        </Flex>
+        <Buttons selectTimeframe={setTimeframe} />
         {cards}
       </Grid>
     </>
