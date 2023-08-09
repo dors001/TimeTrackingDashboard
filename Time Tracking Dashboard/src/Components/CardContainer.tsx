@@ -1,32 +1,47 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Show } from "@chakra-ui/react";
 
 interface Props {
   CardBgGradient: string;
   CardImg: string;
+  children: React.ReactElement;
 }
 
-const CardContainer = ({ CardBgGradient, CardImg }: Props) => {
+const CardContainer = ({ CardBgGradient, CardImg, children }: Props) => {
   return (
     <>
-      <Box
-        maxW="255px"
-        h="245px"
-        borderBottomRadius="2rem"
-        borderTopRadius="2rem"
-        bgGradient={CardBgGradient}
-      >
-        <Box w="100%" h="45px">
-          <Image src={CardImg} float="right" paddingRight="1.5rem" />
-        </Box>
+      <Show breakpoint="(max-width: 767px)">
         <Box
-          w="100%"
-          h="200px"
-          backgroundColor="#1d204b"
-          position="relative"
-          zIndex={1}
-          borderRadius="2rem"
-        ></Box>
-      </Box>
+          borderBottomRadius="2rem"
+          borderTopRadius="2rem"
+          bgGradient={CardBgGradient}
+        >
+          <Box w="100%" h="40px">
+            <Image src={CardImg} float="right" paddingRight="1.5rem" />
+          </Box>
+          {children}
+        </Box>
+      </Show>
+      <Show breakpoint="(min-width: 768px)">
+        <Box
+          maxW="255px"
+          borderBottomRadius="2rem"
+          borderTopRadius="2rem"
+          bgGradient={CardBgGradient}
+        >
+          <Box w="100%" h="45px">
+            <Image src={CardImg} float="right" paddingRight="1.5rem" />
+          </Box>
+          <Box
+            w="100%"
+            backgroundColor="#1d204b"
+            position="relative"
+            zIndex={1}
+            borderRadius="2rem"
+          >
+            {children}
+          </Box>
+        </Box>
+      </Show>
     </>
   );
 };
