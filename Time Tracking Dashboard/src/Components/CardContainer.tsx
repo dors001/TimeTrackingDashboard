@@ -1,6 +1,6 @@
 import { Box, Image, Show } from "@chakra-ui/react";
 
-interface Props {
+export interface Props {
   CardBgGradient: string;
   CardImg: string;
   children: React.ReactElement;

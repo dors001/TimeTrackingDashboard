@@ -5,8 +5,21 @@ import CardContainer from "./Components/CardContainer";
 import CardContent from "./Components/CardContent";
 
 function App() {
-  const cardColor = data.cards[0];
-  console.log(cardColor);
+  //TODO: create a hook for carDaily method & make it able to change daily/weekly/monthly
+  const cardDaily = data.cards.map((c) => (
+    <GridItem w="100%" h="245px">
+      <CardContainer CardBgGradient={c.backgroundColor} CardImg={c.image}>
+        <CardContent
+          CardTitle={c.title}
+          CardTimeFrames={{
+            current: c.timeframes.daily.current,
+            previous: c.timeframes.daily.previous,
+          }}
+        />
+      </CardContainer>
+    </GridItem>
+  ));
+
   return (
     <>
       <Grid
@@ -18,48 +31,7 @@ function App() {
         gap={4}
         margin="2rem"
       >
-        <GridItem w="100%" h="245px">
-          <CardContainer
-            CardBgGradient="linear-gradient(180deg, rgb(255, 138, 100, 1) 26%, rgba(18,23,37,0) 78%)"
-            CardImg="./src/assets/icon-social.svg"
-          >
-              <CardContent />
-          </CardContainer>
-        </GridItem>
-        <GridItem>
-          <Box w="100%" h="245px">
-          </Box>
-        </GridItem>
-        <GridItem>
-          <Box w="100%" h="245px">
-            Block 3
-          </Box>
-        </GridItem>
-        <GridItem>
-          <Box w="100%" h="245px">
-            Block 4
-          </Box>
-        </GridItem>
-        <GridItem>
-          <Box w="100%" h="245px">
-            Block 5
-          </Box>
-        </GridItem>
-        <GridItem>
-          <Box w="100%" h="245px">
-            Block 6
-          </Box>
-        </GridItem>
-        <GridItem>
-          <Box w="100%" h="245px">
-            Block 7
-          </Box>
-        </GridItem>
-        <GridItem>
-          <Box w="100%" h="245px">
-            Block 8
-          </Box>
-        </GridItem>
+        {cardDaily}
       </Grid>
     </>
   );

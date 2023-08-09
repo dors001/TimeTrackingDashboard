@@ -1,7 +1,15 @@
 import { Box, Flex, Text } from "@chakra-ui/layout";
 import { Image, Show } from "@chakra-ui/react";
 
-const CardContent = () => {
+interface Props {
+  CardTitle: string;
+  CardTimeFrames: {
+    current: number;
+    previous: number;
+  };
+}
+
+const CardContent = ({ CardTitle, CardTimeFrames }: Props) => {
   return (
     <>
       <Box
@@ -25,7 +33,7 @@ const CardContent = () => {
               fontWeight="normal"
               display="inline-box"
             >
-              Work
+              {CardTitle}
             </Text>
             <Image
               src="./src/assets/icon-ellipsis.svg"
@@ -35,11 +43,11 @@ const CardContent = () => {
             />
           </Flex>
           <Flex width="100%" justifyContent="space-between">
-            <Text fontSize="2.8rem" fontWeight="bold" display="inline">
-              32hrs
+            <Text fontSize="3.2rem" fontWeight="bold" display="inline">
+              {CardTimeFrames.current}hrs
             </Text>
             <Text fontSize="1.3rem" fontWeight="light" paddingTop="1.5rem">
-              last week - 36hrs
+              Last Week - {CardTimeFrames.previous}hrs
             </Text>
           </Flex>
         </Show>
@@ -52,7 +60,7 @@ const CardContent = () => {
             fontWeight="normal"
             display="inline-box"
           >
-            Work
+            {CardTitle}
           </Text>
           <Image
             src="./src/assets/icon-ellipsis.svg"
@@ -67,10 +75,15 @@ const CardContent = () => {
           marginLeft="2rem"
           marginTop="1rem"
         >
-          32hrs
+          {CardTimeFrames.current}hrs
         </Text>
-        <Text fontSize="1.4rem" fontWeight="light" marginLeft="2rem" paddingBottom="1rem">
-          last week - 36hrs
+        <Text
+          fontSize="1.4rem"
+          fontWeight="light"
+          marginLeft="2rem"
+          paddingBottom="1rem"
+        >
+          Last Week - {CardTimeFrames.previous}hrs
         </Text>
       </Show>
     </>
