@@ -36,7 +36,7 @@ const CardContent = ({ CardTitle, CardTimeFrames }: Props) => {
               {CardTitle}
             </Text>
             <Image
-              src="./src/assets/icon-ellipsis.svg"
+              src="/assets/icon-ellipsis.svg"
               display="box"
               margin="0 auto"
               alignSelf="center"
@@ -63,7 +63,7 @@ const CardContent = ({ CardTitle, CardTimeFrames }: Props) => {
             {CardTitle}
           </Text>
           <Image
-            src="./src/assets/icon-ellipsis.svg"
+            src="/assets/icon-ellipsis.svg"
             display="box"
             margin="0 auto"
             alignSelf="center"

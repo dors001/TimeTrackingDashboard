@@ -1,8 +1,8 @@
-import { Box, Flex, Grid, GridItem, Image, Show, Text } from "@chakra-ui/react";
-import "./index.css";
-import useCards from "./Hooks/useTimeframes";
 import { useState } from "react";
+import { Box, Flex, Grid, GridItem, Image, Show, Text } from "@chakra-ui/react";
+import useCards from "./Hooks/useTimeframes";
 import Buttons from "./Components/Buttons";
+import "./index.css";
 
 function App() {
   const [timeframe, setTimeframe] = useState("weekly");
@@ -30,7 +30,7 @@ function App() {
                 direction="column"
               >
                 <Image
-                  src="/src/assets/image-jeremy.png"
+                  src="/assets/image-jeremy.png"
                   boxSize="32"
                   border="3px solid white"
                   borderRadius="100%"
@@ -80,7 +80,7 @@ function App() {
                 padding="1.5rem"
               >
                 <Image
-                  src="/src/assets/image-jeremy.png"
+                  src="/assets/image-jeremy.png"
                   boxSize="32"
                   border="3px solid white"
                   borderRadius="100%"
