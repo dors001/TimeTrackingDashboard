@@ -27,9 +27,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/TTD-desktop(1440px).png)
-![](./screenshots/TTD-desktop(1440px)-highlight.png)
-![](./screenshots/TTD-mobile.png)
+![](./TTD-desktop(1440px).png)
+![](./TTD-desktop(1440px)-highlight.png)
+![](./TTD-mobile.png)
 
 ### Links
 
