@@ -22,12 +22,7 @@ const CardContainer = ({ CardBgGradient, CardImg, children }: Props) => {
         </Box>
       </Show>
       <Show breakpoint="(min-width: 768px)">
-        <Box
-          maxW="255px"
-          borderBottomRadius="2rem"
-          borderTopRadius="2rem"
-          bgGradient={CardBgGradient}
-        >
+        <Box maxW="255px" borderRadius="2rem" bgGradient={CardBgGradient}>
           <Box w="100%" h="45px">
             <Image src={CardImg} float="right" paddingRight="1.5rem" />
           </Box>

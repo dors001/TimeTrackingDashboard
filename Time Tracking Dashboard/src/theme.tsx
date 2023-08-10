@@ -11,8 +11,12 @@ const theme = extendTheme({
       "html, body": {
         backgroundColor: "#0d1323",
         fontSize: "62.5%",
-        fontFamily: "Rubik, sans-serif",
+        color: "#FFFFFF",
       },
+    },
+    fonts: {
+      heading: `'Rubik', open-sans`,
+      body: `'Rubik', open-sans`,
     },
   },
 });

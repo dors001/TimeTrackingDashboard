@@ -5,3 +5,8 @@ form {
 .lightFont {
     font-weight: 300;
 }
+
+.button {
+  font-size: 1.8rem;
+  background-color: transparent;
+}
