@@ -1,6 +1,6 @@
 # Frontend Mentor - Time tracking dashboard solution
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -14,9 +14,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,83 +27,79 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](<./screenshots/TTD-desktop(1440px).png>)
+![](<./screenshots/TTD-desktop(1440px)-highlight.png>)
+![](./screenshots/TTD-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Git - dors001/TimeTrackingDashboard](https://github.com/dors001/TimeTrackingDashboard/tree/main/Time%20Tracking%20Dashboard)
+- Live Site URL: [Time Tracking Dashboard](https://time-tracking-dashboard-ashen-iota.vercel.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Chakra-UI](https://chakra-ui.com/) - For styles
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+My goal is to get better with react in particular and coding in general.
+This project had some styling challenges with box styling, but i'm satisfied with the end result.
+There are a lot of things that i would do differently but the main one is to put a lot more emphasis on planning the architecture of the application before writing the code. That means to write or draw the building blocks of the design, make a list of the components that i would be making as well as the hooks.
+That way i hope i'll have to make less changes while writing the actual code.
 
-To see how you can add code snippets, see below:
+This projects are very enjoyable to do, they were frustrating at first but after doing a few of them the process is fun and very rewarding at the end.
+
+What i'm really proud of is that i managed to generically render the individual tickets from the data.json file. I created two components, CardContainer.tsx and CardContent.tsx that have all the elements and property i need for one card, and finally i created a hook that map the cards according to the data in the json file.
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const useCards = (timeframe: string) => {
+  if (timeframe.toLowerCase() === "daily") {
+    return data.cards.map((c) => (
+      <GridItem w="100%" h="245px">
+        <CardContainer CardBgGradient={c.backgroundColor} CardImg={c.image}>
+          <CardContent
+            CardTitle={c.title}
+            CardTimeFrames={{
+              current: c.timeframes.daily.current,
+              previous: c.timeframes.daily.previous,
+            }}
+          />
+        </CardContainer>
+      </GridItem>
+    ));
+  }
+  // ... rest of code //
+};
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+The main focus will be to put a lot more emphasis on planning the architecture of the application before writing the code. That means to write or draw the building blocks of the design, make a list of the components that i would be making as well as the hooks.
+That way i hope i'll have to make less changes while writing the actual code.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Setting my sight on creating a more extansiable applicaion that uses more functional logic so i could get a better understanding on hooks.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Get Data From Local Json](https://marketsplash.com/tutorials/react-js/how-to-fetch-data-from-json-file-in-react-js/#:~:text=JSON%20files%20can%20be%20imported,as%20dynamic%20content%20using%20JSX.) - This helped me to better understand how to fetch data from an external resource.
+- [arrat.map() and array.filter](https://www.guvi.in/blog/how-to-render-an-array-of-objects-in-react/#:~:text=The%20most%20popular%20way%20to,help%20with%20debugging%20and%20performance.) - This clarify how to use the array.map() and array.filter(), that way i was able to fully understand how to build my hook and get a better grasp on how to handle information from an external source like data.json
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@dors001](https://www.frontendmentor.io/profile/dors001)
