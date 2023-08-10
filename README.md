@@ -27,9 +27,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](</Time%20Tracking%20Dashboard/Time%20Tracking%20Dashboard/public/screenshots/TTD-desktop(1440px).png>)
-![](</Time%20Tracking%20Dashboard/Time%20Tracking%20Dashboard/public/screenshots/TTD-desktop(1440px)-highlight.png>)
-![](/Time%20Tracking%20Dashboard/Time%20Tracking%20Dashboard/public/screenshots/TTD-mobile.png)
+![](./screenshots/TTD-desktop(1440px).png)
+![](./screenshots/TTD-desktop(1440px)-highlight.png)
+![](./screenshots/TTD-mobile.png)
 
 ### Links
 
